@@ -63,7 +63,7 @@ const makePayment = async (paymentDetail: PaymentRecord) => {
     transactions: [
       {
         amount: {
-          total: amount_paid,
+          total: +amount_paid,
           currency: currency.toUpperCase(),
         },
         description: "Credit Card Payment",
@@ -72,32 +72,37 @@ const makePayment = async (paymentDetail: PaymentRecord) => {
   };
   const accessToken = await getAccessToken();
   const url = `${process.env.PAYPAL_SANDBOX_URL}/v1/payments/payment`;
-  const transactionResponse = await axios({
-    url: url,
-    method: "post",
-    headers: {
-      Authorization: `Bearer ${accessToken}`,
-      // "Content-Type": "x-www-form-urlencoded",
-      "Content-Type": "application/json",
-    },
-    data: data,
-  });
-  console.log(transactionResponse.data);
-  console.log(transactionResponse.data.transactions[0]);
-
-  const { id, state } = transactionResponse.data;
-  const { payment_method } = transactionResponse.data.payer;
-  const { amount } = transactionResponse.data.transactions[0].amount.total;
-  let returnResponse: PaymentResponse = {
-    success: true,
-    transaction: {
-      id: id,
-      amount: amount,
-      status: state,
-      paymentInstrumentType: payment_method,
-    },
-  };
-  return returnResponse;
+  try {
+    const transactionResponse = await axios({
+      url: url,
+      method: "post",
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        // "Content-Type": "x-www-form-urlencoded",
+        "Content-Type": "application/json",
+      },
+      data: data,
+    });
+    const { id, state } = transactionResponse.data;
+    const { payment_method } = transactionResponse.data.payer;
+    const { amount } = transactionResponse.data.transactions[0].amount.total;
+    const returnResponse: PaymentResponse = {
+      success: true,
+      transaction: {
+        id: id,
+        amount: amount,
+        status: state,
+        paymentInstrumentType: payment_method,
+      },
+    };
+    return returnResponse;
+  } catch (error) {
+    return {
+      success: false,
+      message: "Paypal Payment Request Failed",
+      errors: error,
+    };
+  }
 };
 
 export { makePayment };

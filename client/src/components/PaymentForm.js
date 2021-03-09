@@ -166,7 +166,7 @@ export function PaymentForm() {
             <label htmlFor="amount">
               Price:{" "}
               <input
-                type="text"
+                type="number"
                 name="amount"
                 value={amount}
                 onChange={(e) => {
@@ -187,6 +187,7 @@ export function PaymentForm() {
                 {/* <option value="inr">INR</option> */}
                 <option value="aud">AUD</option>
                 <option value="eur">EUR</option>
+                <option value="inr">INR</option>
               </select>
             </label>
             <br />
