@@ -1,0 +1,86 @@
+Test Credit Cards Paypal
+https://developer.paypal.com/docs/payflow/payflow-pro/payflow-pro-testing/
+
+Paypal Sandbox Testing
+https://developer.paypal.com/docs/platforms/test-go-live/
+
+https://developer.paypal.com/docs/integration/paypal-here/sandbox-testing/
+
+https://developer.paypal.com/docs/api/overview/#make-rest-api-calls
+
+https://www.example-code.com/nodejs/paypal_create_direct_credit_card_payment.asp
+
+======================
+BrainTree Test Card
+======================
+creditCard: {
+        number: "4111111111111111",
+        expirationMonth: "2",
+        expirationYear: "2020",
+        cvv: "111",
+      },
+
+======================
+Paypal Test Card
+======================
+Card Type: Visa
+Card Number: 4032036281478626
+Expiration Date: 05/2024
+CVV: 453
+
+Paypal request Payload
+
+// 	{ 
+    // 	  "intent": "sale",
+    // 	  "payer": { 
+    // 	    "payment_method": "credit_card",
+    // 	    "funding_instruments": [
+    // 	      { 
+    // 	        "credit_card": { 
+    // 	          "number": "4032031087659974",
+    // 	          "type": "visa",
+    // 	          "expire_month": 9,
+    // 	          "expire_year": 2021,
+    // 	          "cvv2": 111,
+    // 	          "first_name": "Joe",
+    // 	          "last_name": "Buyer"
+    // 	        }
+    // 	      }
+    // 	    ]
+    // 	  },
+    // 	  "transactions": [
+    // 	    { 
+    // 	      "amount": { 
+    // 	        "total": "7.47",
+    // 	        "currency": "USD"
+    // 	      },
+    // 	      "description": "This is the payment transaction description."
+    // 	    }
+    // 	  ]
+    // 	}
+
+
+    * TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
+* TLSv1.2 (OUT), TLS change cipher, Change cipher spec (1):
+* TLSv1.2 (OUT), TLS handshake, Finished (20):
+* TLSv1.2 (IN), TLS handshake, Finished (20):
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: C=US; ST=California; L=San Jose; O=PayPal, Inc.; OU=CDN Support; CN=api-m.paypal.com
+*  start date: Jul  2 00:00:00 2020 GMT
+*  expire date: Sep  2 12:00:00 2022 GMT
+*  subjectAltName: host "api-m.sandbox.paypal.com" matched cert's "api-m.sandbox.paypal.com"
+*  issuer: C=US; O=DigiCert Inc; OU=www.digicert.com; CN=DigiCert SHA2 High Assurance Server CA
+*  SSL certificate verify ok.
+* Server auth using Basic with user 'Aa1QW2ftTluEeU4BMazlf5RoUE3WmVRfv5_hVR6Ho7AVPgf0Vlv1nK2kqIN74zX-hdznn5IAln0ww56l'
+> POST /v1/oauth2/token HTTP/1.1
+> Host: api-m.sandbox.paypal.com
+> Authorization: Basic QWExUVcyZnRUbHVFZVU0Qk1hemxmNVJvVUUzV21WUmZ2NV9oVlI2SG83QVZQZ2YwVmx2MW5LMmtxSU43NHpYLWhkem5uNUlBbG4wd3c1Nmw6RUpCS0xTRXhfVnVDSklOazNIc19qeXVwQjRpSkRreDRjMVJ5M0dtY1J1cEJaRzRaa0NoTGJCcTFhQjhxQXFoME9ZcWZ1UTZJMUk0LTRiTWo=
+> User-Agent: curl/7.71.1
+> Accept: application/json
+> Accept-Language: en_US
+> Content-Length: 29
+> Content-Type: application/x-www-form-urlencoded
+> 
+{"scope":"https://uri.paypal.com/services/invoicing https://uri.paypal.com/services/vault/payment-tokens/read https://uri.paypal.com/services/disputes/read-buyer https://uri.paypal.com/services/payments/realtimepayment https://uri.paypal.com/services/disputes/update-seller https://uri.paypal.com/services/payments/payment/authcapture openid https://uri.paypal.com/services/disputes/read-seller Braintree:Vault https://uri.paypal.com/services/payments/refund https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/.* https://uri.paypal.com/payments/payouts https://uri.paypal.com/services/vault/payment-tokens/readwrite https://api.paypal.com/v1/vault/credit-card/.* https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/applications/webhooks","access_token":"A21AAJJJ7VOuc5OKY5RVh8aG9dZAQIqdO2pZRP__20pwa5USyBr6vN9zIOeK20ihYGwR_CRcMHV41IR71Mwn7p_B8xuuib6Yw","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32400,"nonce":"2021-03-09T05:19:12Zndkc68EaM4uhZm* Connection #0 to host api-m.sandbox.paypal.com left intact

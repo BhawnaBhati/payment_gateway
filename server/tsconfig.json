@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "es6",        
+    "module": "commonjs",   
+    "outDir": "dist",
+    "baseUrl": ".",
+    "strict": true,                          
+    "esModuleInterop": true,                
+    "forceConsistentCasingInFileNames": true  },
+    "exclude": ["node_modules"],
+	// "include": ["x/y/.ts"]
+}

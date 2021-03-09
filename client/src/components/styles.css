@@ -1,0 +1,56 @@
+form {
+  width: 650px;
+}
+
+input[type="text"],
+input[type="submit"],
+select {
+  padding: 7px;
+  margin: 10px 0;
+}
+
+input[type="submit"] {
+  background-color: rgb(201, 201, 223);
+  margin-left: 300px;
+  font-weight: bolder;
+}
+
+select {
+  width: 192px;
+}
+
+label {
+  padding-left: 26px;
+  width: 370px;
+  display: inline-block;
+  text-align: right;
+  font-weight: bolder;
+}
+
+fieldset {
+  width: 80%;
+  margin: 20px auto;
+  font-weight: bolder;
+}
+
+.error {
+  color: red;
+}
+
+.success span {
+  font-weight: bolder;
+  color: blue;
+}
+
+br {
+  line-height: 25px;
+}
+
+.invalid {
+  color: red;
+}
+
+.errorList {
+  color: red;
+  font-weight: bolder;
+}
