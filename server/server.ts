@@ -23,6 +23,7 @@ app.get("/", function (req, res) {
 
 app.use("/payment", paymentRouter);
 
-app.listen(4000, function () {
-  console.log("App is listening on port 4000!");
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, function () {
+  console.log(`App is listening on port ${PORT}!`);
 });

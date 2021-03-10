@@ -1,7 +1,8 @@
 import React, { createContext, useState } from "react";
 import axios from "axios";
+require("dotenv").config();
 
-const ApiUrl = "http://localhost:4000/payment";
+const ApiUrl = process.env.API_SERVER_URL;
 export const PaymentContext = createContext();
 
 export const PaymentProvider = (props) => {

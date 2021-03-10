@@ -1,7 +1,6 @@
 import axios from "axios";
 import _ from "lodash";
 import { PaymentRecord, PaymentResponse } from "../types";
-require("dotenv").config();
 
 // axios.interceptors.request.use((request) => {
 //   console.log("Starting Request", request);

@@ -8,11 +8,5 @@ const connectionOptions = {
   user: `${process.env.DB_USER}`,
   password: `${process.env.DB_PASSWORD}`,
 };
-console.log(
-  JSON.stringify({
-    ...connectionOptions,
-    password: connectionOptions.password[0],
-  })
-);
 
 export const DB = pgp(connectionOptions);

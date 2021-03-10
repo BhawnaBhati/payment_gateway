@@ -1,4 +1,3 @@
-require("dotenv").config();
 import { DB } from "./db-connection";
 import { PaymentRecord } from "../types";
 
