@@ -1,3 +1,4 @@
+require("dotenv").config();
 import BPromise from "bluebird";
 const pgp = require("pg-promise")({ promiseLib: BPromise });
 
@@ -9,4 +10,10 @@ const connectionOptions = {
   password: `${process.env.DB_PASSWORD}`,
 };
 
-export const DB = pgp(connectionOptions);
+test("should connect to DB", async () => {
+  console.log(
+    `Connecting to DB at ${process.env.DB_HOST}:${process.env.DB_PORT}`
+  );
+  const db = pgp(connectionOptions);
+  expect(db).toHaveProperty("connect");
+});

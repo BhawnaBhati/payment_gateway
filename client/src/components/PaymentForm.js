@@ -41,7 +41,6 @@ export function PaymentForm() {
       ccCvv: [valid.cvv, ccCvv, "CVV"],
     };
     if (fieldName) {
-      console.log(fieldValidationFunctions[fieldName]);
       const [func, argValue, fieldNameLabel] = fieldValidationFunctions[
         fieldName
       ];
@@ -58,7 +57,6 @@ export function PaymentForm() {
           ...withoutCurrentField
         } = invalidFieldErrors;
         setInvalidFieldErrors(withoutCurrentField);
-        console.log(`length - ${Object.keys(withoutCurrentField).length}`);
         if (Object.keys(withoutCurrentField).length === 0) {
           setIsFormInvalid(false);
         }
@@ -68,10 +66,8 @@ export function PaymentForm() {
         responseValidation.card &&
         responseValidation.card.type
       ) {
-        console.log(responseValidation.card.type);
         setCcCardType(responseValidation.card.type);
       }
-      console.log(invalidFieldErrors);
     }
   };
 
