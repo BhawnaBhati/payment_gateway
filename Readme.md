@@ -11,22 +11,22 @@
 
 - review and update parameters in .env
 
-cd server
-npm i
-npm start
+cd server  
+npm i  
+npm start  
 
 ## Starting Client application
 
 - review and update parameters in .env
 
-cd client
-npm i
-npm start
+cd client  
+npm i  
+npm start  
 
 ## Running unit test cases (YET TO BE ADDEDED)
 
-cd client
-npm test
+cd client  
+npm test  
 
 ## Other Details
 
