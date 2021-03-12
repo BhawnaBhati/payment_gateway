@@ -23,7 +23,7 @@ cd client
 npm i  
 npm start  
 
-## Running unit test cases (YET TO BE ADDEDED)
+## Running unit test cases
 
 cd client  
 npm test  
@@ -36,7 +36,3 @@ npm test
 
 - Payment gateway through which a payment was made in not being stored in DB
 - Paypal payment gateway fetches a new access token for each payment request - this token can be cached and reused until expired
-- Unit test cases for
-  - DB Connectivity
-  - BT payment
-  - Paypal payment
