@@ -30,7 +30,7 @@ npm test
 
 ## Other Details
 
-- Server is running on port 4000
+- Server is running on port 4000 (PORT is configrable via .env)
 
 ## Items where some changes can still be made
 
